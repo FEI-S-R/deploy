@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  
+  xserver:
+    image: devrt/xserver
+    ipc: host
+    security_opt:
+      - seccomp:unconfined
+    environment:
+      - DISPLAY=:9
+    ports:
+      - "5000:80"
