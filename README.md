@@ -3,5 +3,5 @@ Repositorio: https://hub.docker.com/layers/simoesruy/apptest/latest/images/sha25
 
 # Plano:
 Fazer parte visual funcionar  
-Juntar ROS e Gazebo
+Juntar ROS e Gazebo  
 Playbook 
