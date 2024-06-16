@@ -5,4 +5,5 @@ Repositório Temporário: https://hub.docker.com/layers/simoesruy/apptest/latest
 Fazer parte visual funcionar no docker (Windows) :shipit:  
 Fazer parte visual funcionar no docker (Linux) :x:  
 Juntar ROS e Gazebo  :shipit:    
+Implementar adicionar arquivos de repositório na imagem :shipit:
 Playbook :x:  
