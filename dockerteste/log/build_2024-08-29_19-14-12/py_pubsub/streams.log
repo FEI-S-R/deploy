@@ -1,0 +1,42 @@
+[0.536s] Invoking command in '/dockerteste/py_pubsub': PYTHONPATH=/dockerteste/build/py_pubsub/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/dockerteste/install/py_pubsub/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/py_pubsub build --build-base /dockerteste/build/py_pubsub/build install --record /dockerteste/build/py_pubsub/install.log --single-version-externally-managed install_data
+[0.746s] running egg_info
+[0.746s] creating ../build/py_pubsub/py_pubsub.egg-info
+[0.747s] writing ../build/py_pubsub/py_pubsub.egg-info/PKG-INFO
+[0.747s] writing dependency_links to ../build/py_pubsub/py_pubsub.egg-info/dependency_links.txt
+[0.747s] writing entry points to ../build/py_pubsub/py_pubsub.egg-info/entry_points.txt
+[0.747s] writing requirements to ../build/py_pubsub/py_pubsub.egg-info/requires.txt
+[0.748s] writing top-level names to ../build/py_pubsub/py_pubsub.egg-info/top_level.txt
+[0.748s] writing manifest file '../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'
+[0.749s] reading manifest file '../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'
+[0.749s] adding license file 'LICENSE'
+[0.750s] writing manifest file '../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'
+[0.750s] running build
+[0.750s] running build_py
+[0.751s] creating /dockerteste/build/py_pubsub/build
+[0.751s] creating /dockerteste/build/py_pubsub/build/lib
+[0.751s] creating /dockerteste/build/py_pubsub/build/lib/py_pubsub
+[0.751s] copying py_pubsub/subscriber_member_function.py -> /dockerteste/build/py_pubsub/build/lib/py_pubsub
+[0.751s] copying py_pubsub/__init__.py -> /dockerteste/build/py_pubsub/build/lib/py_pubsub
+[0.751s] copying py_pubsub/publisher_member_function.py -> /dockerteste/build/py_pubsub/build/lib/py_pubsub
+[0.751s] running install
+[0.752s] running install_lib
+[0.753s] creating /dockerteste/install/py_pubsub/lib/python3.10/site-packages/py_pubsub
+[0.753s] copying /dockerteste/build/py_pubsub/build/lib/py_pubsub/subscriber_member_function.py -> /dockerteste/install/py_pubsub/lib/python3.10/site-packages/py_pubsub
+[0.753s] copying /dockerteste/build/py_pubsub/build/lib/py_pubsub/__init__.py -> /dockerteste/install/py_pubsub/lib/python3.10/site-packages/py_pubsub
+[0.753s] copying /dockerteste/build/py_pubsub/build/lib/py_pubsub/publisher_member_function.py -> /dockerteste/install/py_pubsub/lib/python3.10/site-packages/py_pubsub
+[0.754s] byte-compiling /dockerteste/install/py_pubsub/lib/python3.10/site-packages/py_pubsub/subscriber_member_function.py to subscriber_member_function.cpython-310.pyc
+[0.754s] byte-compiling /dockerteste/install/py_pubsub/lib/python3.10/site-packages/py_pubsub/__init__.py to __init__.cpython-310.pyc
+[0.754s] byte-compiling /dockerteste/install/py_pubsub/lib/python3.10/site-packages/py_pubsub/publisher_member_function.py to publisher_member_function.cpython-310.pyc
+[0.755s] running install_data
+[0.755s] creating /dockerteste/install/py_pubsub/share/ament_index
+[0.755s] creating /dockerteste/install/py_pubsub/share/ament_index/resource_index
+[0.756s] creating /dockerteste/install/py_pubsub/share/ament_index/resource_index/packages
+[0.756s] copying resource/py_pubsub -> /dockerteste/install/py_pubsub/share/ament_index/resource_index/packages
+[0.756s] copying package.xml -> /dockerteste/install/py_pubsub/share/py_pubsub
+[0.756s] running install_egg_info
+[0.757s] Copying ../build/py_pubsub/py_pubsub.egg-info to /dockerteste/install/py_pubsub/lib/python3.10/site-packages/py_pubsub-0.0.0-py3.10.egg-info
+[0.758s] running install_scripts
+[0.776s] Installing listener script to /dockerteste/install/py_pubsub/lib/py_pubsub
+[0.776s] Installing talker script to /dockerteste/install/py_pubsub/lib/py_pubsub
+[0.777s] writing list of installed files to '/dockerteste/build/py_pubsub/install.log'
+[0.794s] Invoked command in '/dockerteste/py_pubsub' returned '0': PYTHONPATH=/dockerteste/build/py_pubsub/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/dockerteste/install/py_pubsub/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/py_pubsub build --build-base /dockerteste/build/py_pubsub/build install --record /dockerteste/build/py_pubsub/install.log --single-version-externally-managed install_data
