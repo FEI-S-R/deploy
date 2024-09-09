@@ -1,0 +1,12 @@
+services:
+  talker:
+    build: .
+    container_name: talker
+    restart: always
+    command: bash -c "source dockerteste/install/setup.bash && ros2 run py_pubsub talker"
+  listener:
+    build: .
+    container_name: listener
+    restart: always
+    command: bash -c "source dockerteste/install/setup.bash && ros2 run py_pubsub listener"
+  
