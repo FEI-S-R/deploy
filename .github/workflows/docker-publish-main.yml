@@ -1,4 +1,4 @@
-name: Docker Publish
+name: Docker Publish Main
 
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
@@ -7,7 +7,7 @@ name: Docker Publish
 
 on:
   push:
-    branches: [ "main","staging" ]
+    branches: [ "main" ]
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
 
@@ -19,6 +19,7 @@ env:
 
 
 jobs:
+  
   build:
 
     runs-on: ubuntu-latest
@@ -92,3 +93,5 @@ jobs:
         # This step uses the identity token to provision an ephemeral certificate
         # against the sigstore community Fulcio instance.
         run: echo "${TAGS}" | xargs -I {} cosign sign --yes {}@${DIGEST}
+    ##testing:
+      
