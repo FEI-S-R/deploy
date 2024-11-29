@@ -32,7 +32,9 @@ jobs:
         run: docker exec talker bash -c "cd /dockerteste/testesROS && ./rodar-testes.sh"
         
       - name: logs
-        run: docker compose logs
+        run: |
+          docker compose ps
+          docker compose logs
           
         
       
