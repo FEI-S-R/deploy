@@ -26,10 +26,12 @@ jobs:
         
 
       - name: compose
-        run: docker compose -f compose.yaml up
+        run: docker compose -f compose.yaml up -d
 
       - name: teste
-        run: docker run --rm talker bash -c "cd /dockerteste/testesROS && ./rodar-testes.sh"
+        run: |
+          docker run --rm talker bash -c "cd /dockerteste/testesROS && ./rodar-testes.sh"
+          docker compose logs
         
       
       
