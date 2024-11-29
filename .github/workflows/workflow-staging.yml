@@ -18,13 +18,15 @@ jobs:
     runs-on: ubuntu-latest
     
     steps: 
-    
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
       - name: buildx
         uses: docker/setup-buildx-action@v2
        
 
       - name: compose
-        run: docker compose up
+        run: docker compose -f compose.yaml up
 
       - name: teste
         run: docker run --rm talker bash -c "cd /dockerteste/testesROS && ./rodar-testes.sh"
