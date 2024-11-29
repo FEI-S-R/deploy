@@ -13,6 +13,7 @@ RUN sudo apt-get install -y wget
 
 ##copiando arquivos de teste
 COPY dockerteste /dockerteste
+RUN chmod +x /dockerteste/testesROS/rodar-testes.sh
 
 ##coloca o display do docker como o display 0
 ENV DISPLAY=host.docker.internal:0.0
