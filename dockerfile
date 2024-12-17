@@ -14,7 +14,8 @@ RUN sudo apt-get install -y wget
 ##copiando arquivos de teste
 COPY dockerteste /dockerteste
 RUN chmod +x /dockerteste/testesROS/rodar-testes.sh
-
+##declarando o source, para nao ter que fazer em toda inicializacao de terminal bash
+RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 ##coloca o display do docker como o display 0
 ENV DISPLAY=host.docker.internal:0.0
 
