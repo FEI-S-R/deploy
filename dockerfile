@@ -11,16 +11,17 @@ RUN sudo apt-get update
 RUN sudo apt-get install -y vim
 RUN sudo apt-get install -y wget
 
-##copiando arquivos de teste
+##copiando arquivos de teste e dependencias
 COPY dockerteste /dockerteste
 RUN chmod +x /dockerteste/testesROS/rodar-testes.sh
+RUN rosdep install --from-paths /dockerteste --ignore-src -r -y
 ##declarando o source, para nao ter que fazer em toda inicializacao de terminal bash
 RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
-##coloca o display do docker como o display 0
-ENV DISPLAY=host.docker.internal:0.0
+RUN echo "source /dockerteste/install/setup.bash" >> ~/.bashrc
 
-## teste ros:
+##coloca o display do docker como o display 0
+##ENV DISPLAY=host.docker.internal:0.0
+
+## teste ros (precisa de display):
 ## ros2 run turtlesim turtlesim_node
-## teste gazebo:
-## ign gazebo shapes.sdf ou ign gazebo para o gui
-## no windows requer https://sourceforge.net/projects/vcxsrv/ , rodar xlaunch, com display em 0 
+
