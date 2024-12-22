@@ -34,7 +34,7 @@ jobs:
       - name: logs
         run: |
           docker compose ps
-          docker compose logs
+          docker compose logs > logs.txt
           
         
       
