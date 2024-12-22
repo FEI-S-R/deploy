@@ -29,7 +29,7 @@ jobs:
         run: docker compose -f compose.yaml up -d
 
       - name: teste
-        run: docker exec talker bash -c "cd /dockerteste/testesROS && ./rodar-testes.sh"
+        run: docker exec listener bash -c "cd /dockerteste/testesROS && ./rodar-testes.sh"
         
       - name: logs
         run: |
