@@ -1,7 +1,14 @@
 FROM ros:humble
 
 ##instalar gazebo
-RUN sudo apt-get update
+RUN apt-get update && \
+    apt-get install -y \
+    python3-colcon-common-extensions \
+    python3-rosdep \
+    python3-rosinstall \
+    python3-rosinstall-generator \
+    python3-wstool \
+    python3-catkin-tools
 ##RUN sudo apt-get install -y ignition-fortress
 
 ##pacotes para compatibilidade humble-gazebo
