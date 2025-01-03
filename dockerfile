@@ -8,13 +8,17 @@ RUN sudo apt-get update
 ##RUN sudo apt-get install -y ros-humble-ros-gz
 
 ##instalar miscelaneos
-RUN sudo apt-get install -y vim
-RUN sudo apt-get install -y wget
+RUN sudo apt-get install -y vim wget
 
-##copiando arquivos de teste e dependencias
+##copiando arquivos de teste
 COPY dockerteste /dockerteste
 RUN chmod +x /dockerteste/testesROS/rodar-testes.sh
-RUN rosdep install --from-paths /dockerteste --ignore-src -r -y
+
+##faz build do projeto
+RUN cd docketeste &&\
+    rosdep install -it --from-paths src --ros-distro humble -y &&\
+    colcon build --packages-select py_pubsub
+
 ##declarando o source, para nao ter que fazer em toda inicializacao de terminal bash ##(nao funciona)
 ##RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 ##RUN echo "source /dockerteste/install/setup.bash" >> ~/.bashrc
