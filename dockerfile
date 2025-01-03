@@ -15,9 +15,9 @@ COPY dockerteste /dockerteste
 RUN chmod +x /dockerteste/testesROS/rodar-testes.sh
 
 ##faz build do projeto
-RUN cd dockerteste && \
-    rosdep install -i --from-path src --rosdistro humble -y && \
-    colcon build --packages-select py_pubsub
+WORKDIR /dockerteste
+RUN rosdep install -i --from-path src --rosdistro humble -y 
+RUN colcon build --packages-select py_pubsub
 
 ##declarando o source, para nao ter que fazer em toda inicializacao de terminal bash ##(nao funciona)
 ##RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
