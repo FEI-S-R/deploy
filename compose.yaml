@@ -3,15 +3,15 @@ services:
     build: .
     container_name: talker1
     restart: always
-    command: bash -c "source /dockerteste/install/setup.bash && ros2 run py_pubsub talker --ros-args -p number:=1"
+    command: bash -c "cd dockerteste && source install/setup.bash && ros2 run py_pubsub talker --ros-args -p number:=1"
   talker2:
     build: .
     container_name: talker2
     restart: always
-    command: bash -c "source /dockerteste/install/setup.bash && ros2 run py_pubsub talker --ros-args -p number:=2"
+    command: bash -c "cd dockerteste && source install/setup.bash && ros2 run py_pubsub talker --ros-args -p number:=2"
   listener:
     build: .
     container_name: listener
     restart: always
-    command: bash -c "source /dockerteste/install/setup.bash && ros2 run py_pubsub listener"
+    command: bash -c "cd dockerteste && source install/setup.bash && ros2 run py_pubsub listener"
   
