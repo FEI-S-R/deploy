@@ -1,4 +1,4 @@
-FROM osrf/ros:humble-desktop
+FROM ros:humble
 
 ##instalar gazebo
 RUN sudo apt-get update
