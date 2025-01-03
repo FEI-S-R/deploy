@@ -15,7 +15,7 @@ COPY dockerteste /dockerteste
 RUN chmod +x /dockerteste/testesROS/rodar-testes.sh
 
 ##faz build do projeto
-RUN cd docketeste &&\
+RUN cd dockerteste &&\
     rosdep install -it --from-paths src --ros-distro humble -y &&\
     colcon build --packages-select py_pubsub
 
