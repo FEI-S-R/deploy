@@ -1,14 +1,7 @@
 FROM ros:humble
 
 ##instalar gazebo
-RUN apt-get update && \
-    apt-get install -y \
-    python3-colcon-common-extensions \
-    python3-rosdep \
-    python3-rosinstall \
-    python3-rosinstall-generator \
-    python3-wstool \
-    python3-catkin-tools
+RUN apt-get update
 ##RUN sudo apt-get install -y ignition-fortress
 
 ##pacotes para compatibilidade humble-gazebo
@@ -23,8 +16,8 @@ RUN chmod +x /dockerteste/testesROS/rodar-testes.sh
 
 ##faz build do projeto
 WORKDIR /dockerteste
-RUN rosdep install -i --from-path src --rosdistro humble -y 
-RUN colcon build --packages-select py_pubsub
+##RUN rosdep install -i --from-path src --rosdistro humble -y
+##RUN colcon build --packages-select py_pubsub
 
 ##declarando o source, para nao ter que fazer em toda inicializacao de terminal bash ##(nao funciona)
 ##RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
