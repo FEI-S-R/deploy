@@ -8,7 +8,7 @@ Implementar adicionar arquivos de repositório no container :shipit:
 Docker Compose :shipit:  
 Playbook Ansible :x:  
 Integrar Robo usando Github Actions (CD) :x:  
-Integrar Servidor de teste usando Github Actions (CI) :x:
+Automatizar testes usando Github Actions (CI) :shipit:
 
 
 Opcional:
