@@ -9,7 +9,7 @@ Docker Compose :shipit:
 Playbook Ansible :x:  
 Integrar Robo usando Github Actions (CD) :x:  
 Automatizar testes usando Github Actions (CI) :shipit:
-
+Criar Documentação :x:
 
 Opcional:
 Testar diferenças de desempenho entre um robô utilizando containers Docker e um rodando nativamente :x:  
