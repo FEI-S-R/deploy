@@ -1,0 +1,49 @@
+- name: Configurando Instalacao ROS2 Humble
+  hosts: localhost
+  become: true
+  connection: local
+  gather_facts: yes
+  tasks:
+    - name: checa se a versao Linux Jammy 22.04 esta instalada
+      fail:
+        msg: "O playbook precisa de Linux Jammy 22.04!"
+      when: ansible_distribution_release!= "jammy" or ansible_distribution_version != "22.04"
+
+    - name: atualiza apt
+      apt:
+        update_cache: yes
+
+    - name: instala locales e dependencias
+      apt:
+        name: 
+        - locales
+        - software-properties-common
+        - curl
+        state: present
+      
+    - name: gera locales
+      community.general.locale_gen: 
+        name: "en_US.UTF-8"
+        state: present
+
+    - name: aplica locales
+      ansible.builtin.shell: update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 && export LANG=en_US.UTF-8
+
+    - name: adiciona repositorio 1
+      ansible.builtin.shell: add-apt-repository universe 
+
+    - name: adiciona repositorio 2
+      ansible.builtin.shell: curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg 
+      
+
+    - name: adiciona repositorio 3
+      ansible.builtin.shell: echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | tee /etc/apt/sources.list.d/ros2.list > /dev/null
+
+    - name: atualiza apt novamente
+      apt:
+        update_cache: yes
+
+    - name: instala ros2 humble
+      apt:
+        name: ros-humble-desktop
+        state: present 
