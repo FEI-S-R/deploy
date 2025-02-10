@@ -11,13 +11,24 @@ Este repositório contém arquivos e Actions relacionados à utilização, coord
 - Actions  
 
 # Dependências
-- Linux 
+- Linux
+  
 ## Para Dockerfile
-- Docker Engine (https://docs.docker.com/engine/install/ubuntu/)  
+- Docker Engine (https://docs.docker.com/engine/install/ubuntu/)
 ## Para Playbook
 - Ansible (https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)  
 # Utilização
 ## Package !!! Falta adicionar o github login para tokens da organização!!
+É necessário a autenticação das credenciais no docker para poder fazer o pull das imagens!
+```
+docker login ghcr.io
+```
+Logo depois informando um username e uma Access Token com acesso às packages da organização 
+```
+Username: usernamequalquer
+Password: AccessToken
+```
+  
 As Packages deste repositório são imagens hosteadas em ghcr.io (Repositório de Imagens do Github), automaticamente contruídas baseadas no conteúdo das branches, o uso delas sendo visado a facilitar a sua utilização  
 Por Exemplo:
 ### Para a imagem principal localizada na branch main:
