@@ -7,7 +7,6 @@ Juntar ROS e Gazebo  :shipit:
 Implementar adicionar arquivos de repositório no container :shipit:   
 Docker Compose :shipit:  
 Playbook Ansible :shipit:  
-Integrar Robo usando Github Actions (CD) :x:  
 Automatizar testes usando Github Actions (CI) :shipit:  
 Criar Documentação :x:
 
