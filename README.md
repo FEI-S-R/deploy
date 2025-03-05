@@ -46,7 +46,7 @@ docker pull ghcr.io/fei-s-r/deploy:staging
 ## Dockerfile
 A dockerfile contém todas as intruções de instalações de dependências e configurações da imagem, o arquivo pode ser modificado para adicionar ou remover dependências  
 Por Exemplo, adicionar tty-clock para a imagem:
-```
+```yaml
 FROM ros:humble ##imagem base, tudo após isso são mudanças exclusivas a imagem final
 
 RUN apt-get update ##atualiza o apt-get
@@ -68,7 +68,7 @@ RUN rosdep install -i --from-path . --rosdistro humble -y && \
 ## Docker Compose  
 O Docker Compose possibilita a coordenação de vários containers de forma centralizada, permitindo uma maior facilidade em integrar diferentes containers.   
 O compose.yaml disponível demonstra como algo deste tipo funciona/é possível:
-```
+```yaml
 services: ## cada servico (container) que o compose deve subir
 
   talker1: ##exemplo de um servico
@@ -106,10 +106,10 @@ O repositório possui 2 Actions, um para upload da imagem em main, e outra para 
 # Workflow Main
 Esta Action é acionada quando há algum push para Main, construindo a imagem e fazendo upload desta para ghcr.io/fei-s-r/main
 # Workflow staging
-Esta Action é acionada quando há algum push para staging, construindo a imagem, rodando o compose e rodando comandos de testes presentes ambos no compose em sí,
-como também presentes no Action, sendo possível rodar arquivos .sh dentro dos containers do compose. O actions também loga as saídas do compose, as transformando em um arquivo
+Esta Action é acionada quando há algum push para staging, construindo a imagem, rodando o compose e rodando comandos de testes presentes ambos no Action,
+como também presentes em arquivos para facilitar testes, sendo possível rodar arquivos .sh dentro dos containers do compose. O actions também loga as saídas do compose, as transformando em um arquivo
 que pode ser baixado posteriormente.
-```
+```yaml
       - name: compose ##inicia o compose e redireciona logs do compose para um arquivo logs.txt 
         run: |
           docker compose -f compose.yaml up -d
