@@ -5,9 +5,9 @@ Este repositório contém arquivos e Actions relacionados à utilização, coord
 
 # Conteúdo  
 
-- dockerfile
-- playbook.yaml
-- compose.yaml
+- dockerfile   
+- compose.yaml   
+- playbook.yaml   
 - Actions  
 
 # Dependências
@@ -100,6 +100,34 @@ O playbook ansible criado permite a rápida e consistente instalação das depen
 Tendo o ansible instalado, é possível rodar o playbook pelo seguinte comando:
 ```
 ansible-playbook playbook.yaml
+```
+## Actions    
+O repositório possui 2 Actions, um para upload da imagem em main, e outra para upload e testes em staging
+# Workflow Main
+Esta Action é acionada quando há algum push para Main, construindo a imagem e fazendo upload desta para ghcr.io/fei-s-r/main
+# Workflow staging
+Esta Action é acionada quando há algum push para staging, construindo a imagem, rodando o compose e rodando comandos de testes presentes ambos no compose em sí,
+como também presentes no Action, sendo possível rodar arquivos .sh dentro dos containers do compose. O actions também loga as saídas do compose, as transformando em um arquivo
+que pode ser baixado posteriormente.
+```
+      - name: compose ##inicia o compose e redireciona logs do compose para um arquivo logs.txt 
+        run: |
+          docker compose -f compose.yaml up -d
+          docker compose logs -f > logs.txt &
+
+      - name: teste ##roda o .sh chamado rodar-testes.sh dentro do container de nome listener
+        run: docker exec listener bash -c "cd /dockerteste/testesROS && ./rodar-testes.sh"
+        
+      - name: logs ##mostra os containers ainda ativos
+        run: |
+          docker compose ps
+          
+          
+      - name: upload dos logs ##faz upload dos logs como um arquivo no job do Action
+        uses: actions/upload-artifact@v4
+        with:
+          name: docker-logs
+          path: logs.txt
 ```
 # Plano:
 
