@@ -65,6 +65,7 @@ RUN rosdep install -i --from-path . --rosdistro humble -y && \
     colcon build
 
 ```
+
 ## Docker Compose  
 O Docker Compose possibilita a coordenação de vários containers de forma centralizada, permitindo uma maior facilidade em integrar diferentes containers.   
 O compose.yaml disponível demonstra como algo deste tipo funciona/é possível:
@@ -93,6 +94,10 @@ services: ## cada servico (container) que o compose deve subir
     restart: always
     command: bash -c "source install/setup.bash && ros2 run py_pubsub listener"
   
+```
+Comando para subir o compose:  
+```
+docker compose up
 ```
 ## Playbook  
 O playbook ansible criado permite a rápida e consistente instalação das dependências necessárias para rodar o ROS2 Humble na máquina local  
