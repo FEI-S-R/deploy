@@ -134,12 +134,4 @@ que pode ser baixado posteriormente.
           name: docker-logs
           path: logs.txt
 ```
-# Plano:
-
-Juntar ROS e Gazebo  :shipit:    
-Implementar adicionar arquivos de repositório no container :shipit:   
-Docker Compose :shipit:  
-Playbook Ansible :shipit:  
-Automatizar testes usando Github Actions (CI) :shipit:  
-Criar Documentação :x:
 
